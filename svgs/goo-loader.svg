@@ -1,9 +1,9 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  class="lds-gooeyring"
-  width="80px"
-  height="80px"
+  class="goo"
+  width="100px"
+  height="100px"
   viewBox="0 0 100 100"
   preserveAspectRatio="xMidYMid"
   style="animation-play-state: running; animation-delay: 0s; background: none;">
