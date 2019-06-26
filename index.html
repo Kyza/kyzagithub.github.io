@@ -1,16 +1,167 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Khub • Kyza's BetterDiscord Hub</title>
+
+	<meta property="og:site_name" content="kyza.gq">
+	<meta property="og:image" content="https://kyza.gq/media/KyzaPFP.webp">
+	<meta property="og:title" content="Khub • Kyza's BetterDiscord Hub">
+	<meta property="og:description" content="The hub for all of Kyza's BetterDiscord plugins and themes.">
+	<meta name="description" content="The hub for all of Kyza's BetterDiscord plugins and themes.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://khub.kyza.gq/">
+	<meta name="theme-color" content="#7bbe17">
+
+	<link rel="preconnect" href="https://img.shields.io/">
+	<link rel="preconnect" href="https://stackpath.bootstrapcdn.com/">
+	<link rel="preconnect" href="https://ajax.googleapis.com/">
+	<link rel="preconnect" href="https://cdn.jsdelivr.net/">
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com/">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="author" content="Kyza">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="robots" content="index, follow">
+
+	<link rel="stylesheet/less" type="text/css" href="./css/index.less">
+	<!-- <link rel="stylesheet" type="text/css" href="./css/transition.css"> -->
+</head>
 
 <body>
-	<p>
-		The main page is a work in progress, click <a href="https://khub.kyza.gq/">here</a> to go to Khub, the page with my BetterDiscord plugins and themes.
-		<br><br>
-		You will be redirected there in 10 seconds.
-	</p>
+	<!-- <div id="particles-js"></div> -->
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="https://kyza.gq/">kyza.gq</a>
+
+		<button id="navbar-toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarButtons" aria-controls="navbarButtons" aria-expanded="false" aria-label="Toggle Navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarButtons">
+			<ul class="nav nav-pills">
+				<li class="nav-item">
+					<a class="nav-link" href="#faq">#faq</a>
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">#plugins</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#SafeEmbedGenerator">#SafeEmbedGenerator</a>
+						<div role="separator" class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#CustomDiscordIcon">#CustomDiscordIcon</a>
+						<div role="separator" class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#GhostMessage">#GhostMessage</a>
+					</div>
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">#themes</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#DarkDarkTheme">#DarkDarkTheme</a>
+						<div role="separator" class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#Nickcord">#Nickcord</a>
+					</div>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="https://kyza.gq/discord/">#discord</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="https://github.com/KyzaGitHub/Khub/issues/new">#bug-report</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="div-body">
+		<div class="jumbotron main-jumbotron">
+			<h1 class="display-1">kyza.gq</h1>
+
+			<a href="#"><img alt="A Shield" class="shield-large lazyload"
+					data-src="https://img.shields.io/static/v1.svg?label=A%20Shield&amp;message=COOL&amp;color=blue&amp;style=for-the-badge&amp;logo=Discord&amp;logoColor=909090&amp;labelColor=303030"></a>
+
+			<p class="lead">Lead</p>
+
+			<hr class="my-4">
+
+			<p>Make sure to read the <a href="#faq">#faq</a> below, as well as join <a href="https://kyza.gq/discord/">my Discord server</a>.</p>
+		</div>
+
+		<hr class="my-4">
+
+		<div id="jumbo" class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4"></h1>
+				<p class="lead"></p>
+			</div>
+		</div>
+
+		<div class="card-group">
+			<div class="card">
+				<div class="card-header">
+					Card header.
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Card title.</h5>
+					<p class="card-text">
+						Card text.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-header">
+			© 2019 <a href="https://github.com/KyzaGitHub">Kyza</a>. All rights reserved.
+		</div>
+	</div>
+
+	<div id="transitionPanel1" style="animation-duration: 1s; animation-timing-function: ease-in-out; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: slideAway1; animation-fill-mode: forwards;"></div>
+	<div id="transitionPanel2" style="animation-duration: 1s; animation-timing-function: ease-in-out; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: slideAway2; animation-fill-mode: forwards;"></div>
+	<div id="transitionPanel3" style="animation-duration: 1s; animation-timing-function: ease-in-out; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: slideAway3; animation-fill-mode: forwards;"></div>
+	<div id="transitionPanel4" style="animation-duration: 1s; animation-timing-function: ease-in-out; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: slideAway4; animation-fill-mode: forwards;"></div>
+
 </body>
-<script>
-	setTimeout(() => {
-		window.location = "https://khub.kyza.gq/";
-	}, 10000);
+
+<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<!-- Only needed for editing the theme. <link rel="stylesheet" href="./css/_variables.scss"> -->
+<link rel="text/x-sass" href="./css/custom.sass">
+
+<script src="./js/lazysizes.min.js" async></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async>
+	new Crate({
+		server: '459014303224168449',
+		channel: '459014304713408537',
+		shard: 'https://disweb.deploys.io',
+		location: ['bottom', 'right'],
+		color: '#7bbe17'
+	});
+	crate.notify({
+		content: "I have a Discord server.",
+		timeout: 10000,
+		avatar: "https://kyza.gq/media/KyzaPFP-VerySmall.webp"
+	});
+	crate.on('message', ({
+		message,
+		channel
+	}) => {
+		crate.notify({
+			content: message,
+			timeout: 10000,
+			avatar: author.avatar
+		});
+	});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.10.0/beautify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.10.0/beautify-css.min.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
 
 </html>
