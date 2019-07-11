@@ -1,15 +1,160 @@
 <html>
 
 <head>
-  <script>
-    if (window.location != "https://kyza.gq/404/") {
-      window.location.replace("https://kyza.gq/404/");
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+
+    * {
+      font-family: 'Russo One', sans-serif;
     }
-  </script>
+
+    body {
+      overflow: hidden;
+    }
+
+    #backdrop {
+      z-index: 0;
+      position: absolute !important;
+    }
+
+    .fourohfour {
+      z-index: 1;
+      position: absolute !important;
+      opacity: 0;
+      background-color: transparent;
+    }
+  </style>
 </head>
 
-<body>
-  Looks like you're lost.
+<body style="margin: 0px;">
+  <div id="backdrop"></div>
+  <div id="one" class="fourohfour">4</div>
+  <div id="two" class="fourohfour">0</div>
+  <div id="three" class="fourohfour">4</div>
 </body>
+
+<script>
+  if (window.location != "https://kyza.gq/404/") {
+    //   window.location.replace("https://kyza.gq/404/");
+  }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="./js/anime.min.js"></script>
+<script>
+  // Set the divs to their original positions.
+  anime({
+    targets: '.fourohfour',
+    opacity: "0",
+    fontSize: "16em",
+    width: "auto",
+    height: "auto",
+    duration: 0
+  });
+  anime({
+    targets: '#one',
+    duration: 0
+  });
+  anime({
+    targets: '#two',
+    duration: 0
+  });
+  anime({
+    targets: '#three',
+    duration: 0
+  });
+
+
+
+  anime({
+    targets: '.fourohfour',
+    opacity: "1",
+    delay: 500,
+    duration: 2000,
+    easing: 'easeInOutQuad'
+  });
+
+
+  // Animate the backdrop.
+  function randomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  anime({
+    targets: '#backdrop',
+    opacity: "0",
+    backgroundColor: "transparent",
+    width: "100%",
+    height: "0px",
+    duration: 0,
+    easing: 'easeInOutQuad'
+  });
+  anime({
+    targets: '#backdrop',
+    opacity: "1",
+    height: "100%",
+    backgroundColor: function() {
+      return randomColor();
+    },
+    duration: 2000,
+    easing: 'easeInOutQuad'
+  });
+  function changeBackdrop() {
+    anime({
+      targets: '#backdrop',
+      backgroundColor: function() {
+        return randomColor();
+      },
+      duration: 5000,
+      easing: 'easeInOutQuad',
+      complete: changeBackdrop
+    });
+  }
+  changeBackdrop();
+
+
+
+  // Animate the numbers separately.
+  var params = {
+    translateX: function() {
+      return anime.random(0, $(window).width() - $(".fourohfour").width());
+    },
+    translateY: function() {
+      return anime.random(0, $(window).height() - $(".fourohfour").height());
+    },
+    easing: 'easeInOutQuad',
+    duration: function() {
+      return anime.random(1000, 2000);
+    }
+  };
+
+  function one() {
+    var tmp = params;
+    tmp.targets = "#one";
+    tmp.complete = one;
+    anime(tmp);
+  }
+
+  function two() {
+    var tmp = params;
+    tmp.targets = "#two";
+    tmp.complete = two;
+    anime(tmp);
+  }
+
+  function three() {
+    var tmp = params;
+    tmp.targets = "#three";
+    tmp.complete = three;
+    anime(tmp);
+  }
+
+  one();
+  two();
+  three();
+</script>
 
 </html>
