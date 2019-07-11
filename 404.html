@@ -18,8 +18,12 @@
       position: absolute !important;
     }
 
-    .fourohfour {
+    .backdrop {
       z-index: 1;
+    }
+
+    .fourohfour {
+      z-index: 2;
       position: absolute !important;
       opacity: 0;
       background-color: transparent;
@@ -28,15 +32,32 @@
 </head>
 
 <body style="margin: 0px;">
-  <div id="backdrop"></div>
-  <div id="one" class="fourohfour">4</div>
-  <div id="two" class="fourohfour">0</div>
-  <div id="three" class="fourohfour">4</div>
+  <div id="backdrop">
+    <div id="bd0" class="backdrop"></div>
+    <div id="bd1" class="backdrop"></div>
+    <div id="bd2" class="backdrop"></div>
+    <div id="bd3" class="backdrop"></div>
+    <div id="bd4" class="backdrop"></div>
+    <div id="bd5" class="backdrop"></div>
+    <div id="bd6" class="backdrop"></div>
+    <div id="bd7" class="backdrop"></div>
+    <div id="bd8" class="backdrop"></div>
+    <div id="bd9" class="backdrop"></div>
+  </div>
+  <div id="fourohfour1" class="fourohfour">
+    4
+  </div>
+  <div id="fourohfour2" class="fourohfour">
+    0
+  </div>
+  <div id="fourohfour3" class="fourohfour">
+    4
+  </div>
 </body>
 
 <script>
   if (window.location != "https://kyza.gq/404/") {
-    window.location.replace("https://kyza.gq/404/");
+    // window.location.replace("https://kyza.gq/404/");
   }
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -87,37 +108,67 @@
   anime({
     targets: '#backdrop',
     opacity: "0",
-    backgroundColor: "transparent",
+    backgroundColor: "#fff",
     width: "100%",
-    height: "0px",
+    height: "100%",
     duration: 0,
     easing: 'easeInOutQuad'
   });
+
   anime({
     targets: '#backdrop',
     opacity: "1",
-    height: "100%",
-    backgroundColor: function() {
-      return randomColor();
-    },
     duration: 2000,
     easing: 'easeInOutQuad'
   });
 
-  function changeBackdrop() {
+  for (var i = 0; i < 10; i++) {
     anime({
-      targets: '#backdrop',
-      backgroundColor: function() {
-        return randomColor();
-      },
-      duration: 5000,
+      targets: "#bd" + i,
+      top: (i * 10) + "%",
+      height: "10%",
+      duration: 0
+    });
+    anime({
+      targets: ".backdrop",
+      keyframes: [{
+        backgroundColor: "#fff",
+        duration: 0
+      }, {
+        backgroundColor: "#000",
+        duration: 1000
+      }, {
+        delay: 1000,
+        backgroundColor: "#fff",
+        duration: 1000
+      }],
+      delay: anime.stagger(100),
       easing: 'easeInOutQuad',
-      complete: changeBackdrop
+      loop: true
     });
   }
-  changeBackdrop();
 
+  setInterval(() => {
+    isWhite = !isWhite;
+    var col = "";
+    if (isWhite) {
+      col = "#000";
+    } else {
+      col = "#fff";
+    }
 
+    var tmp = {
+      color: col,
+      duration: 5000
+    };
+
+    tmp.targets = "#fourohfour1";
+    anime(tmp);
+    tmp.targets = "#fourohfour2";
+    anime(tmp);
+    tmp.targets = "#fourohfour3";
+    anime(tmp);
+  }, 2000);
 
   // Animate the numbers separately.
   var params = {
@@ -133,30 +184,32 @@
     }
   };
 
-  function one() {
+  var isWhite = true;
+
+  function fourohfour1() {
     var tmp = params;
-    tmp.targets = "#one";
-    tmp.complete = one;
+    tmp.targets = "#fourohfour1";
+    tmp.complete = fourohfour1;
     anime(tmp);
   }
 
-  function two() {
+  function fourohfour2() {
     var tmp = params;
-    tmp.targets = "#two";
-    tmp.complete = two;
+    tmp.targets = "#fourohfour2";
+    tmp.complete = fourohfour2;
     anime(tmp);
   }
 
-  function three() {
+  function fourohfour3() {
     var tmp = params;
-    tmp.targets = "#three";
-    tmp.complete = three;
+    tmp.targets = "#fourohfour3";
+    tmp.complete = fourohfour3;
     anime(tmp);
   }
 
-  one();
-  two();
-  three();
+  fourohfour1();
+  fourohfour2();
+  fourohfour3();
 </script>
 
 </html>
